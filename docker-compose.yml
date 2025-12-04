@@ -1,0 +1,41 @@
+version: '3.8'
+
+services:
+  sonar:
+    image: sonarqube:10.3-community
+    container_name: sonarqube
+    volumes:
+      - ./postgres_data:/opt/sonarqube/data
+      - ./sonar_data:/opt/sonarqube/logs
+      - ./sonar_extensions:/opt/sonarqube/extensions
+    environment:
+      - SONAR_ES_BOOTSTRAP_CHECKS_DISABLE=true
+    ports:
+      - "9000:9000"
+    networks:
+      - sonar
+    restart: unless-stopped
+
+  ngrok:
+    image: ngrok/ngrok:latest
+    container_name: ngrok
+    environment:
+      - NGROK_AUTHTOKEN=${NGROK_AUTHTOKEN}
+    command:
+      - "start"
+      - "--all"
+      - "--config"
+      - "/etc/ngrok.yml"
+    ports:
+      - "4040:4040"
+    volumes:
+      - ./ngrok.yml:/etc/ngrok.yml
+    networks:
+      - sonar
+    depends_on:
+      - sonar
+    restart: unless-stopped
+
+networks:
+  sonar:
+    driver: bridge
