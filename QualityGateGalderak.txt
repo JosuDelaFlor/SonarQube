@@ -1,0 +1,17 @@
+1. Zer da "New Code" SonarQube-n eta zergatik da garrantzitsua?
+"New Code" SonarQube-n azken aldian gehitu edo aldatu den kodeari egiten dio erreferentzia. Garrantzitsua da, arreta kode berrian jartzen duelako, akatsak, segurtasun-arazoak eta mantentze-arazoak hasieratik saihesteko. Horrela, ez da kode zaharreko zor teknikoarekin nahasten eta kalitate hobea bermatzen da etorkizunerako.
+
+2. Nola eragin diezaioke kode berriaren kalitateak zure CI/CD kanalari?
+Kode berriaren kalitate txarrak CI/CD kanalaren exekuzioa eten dezake, Quality Gate-a gainditzen ez bada. Horrek esan nahi du build-ak edo deploy-ak blokeatu daitezkeela, arazoak konpondu arte. Aldiz, kode berriaren kalitate ona izateak pipeline fidagarriagoa eta azkarragoa bermatzen du.
+
+3. Zer baldintzak jarri zenituen zure Quality Gate pertsonalizatuan? Zergatik aukeratu zenituen horiek?
+Quality Gate pertsonalizatuan baldintza hauek jarri nituen: bug berririk ez izatea, segurtasun-ahultasun berririk ez izatea, code smell kopuru onargarria izatea eta test estaldura minimo bat betetzea. Baldintza hauek aukeratu nituen, kode berriaren egonkortasuna, segurtasuna eta mantentze-erraztasuna bermatzeko.
+
+4. Zein arazo aurkitu zenituen kode berrian? Nola konpondu zenituen?
+Kode berrian code smell batzuk, baliabideen kudeaketa desegokia eta izen ez oso argiak aurkitu nituen. Arazo hauek konpontzeko, kodea berrantolatu nuen, funtzioak sinplifikatu nituen, izen adierazgarriagoak erabili nituen eta beharrezko testak gehitu nituen.
+
+5. Zer da "Clean as You Code" filosofia? Nola aplikatu duzu ariketa honetan?
+"Clean as You Code" filosofia kode berria beti garbi eta kalitate onekoa izatea defendatzen duen ikuspegia da. Ez da helburua kode zahar guztia berehala konpontzea, baizik eta sortzen den kode berria ondo egitea. Ariketa honetan, filosofia hau aplikatu dut kode berrian arauak zorrotz jarraituz eta SonarQube-k markatutako arazoak berehala zuzenduz.
+
+
+Repositorioa -> https://github.com/JosuDelaFlor/SonarQube.git
